@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <EditText
+        android:id="@+id/note_title_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:maxLines="1"/>
+
+    <EditText
+        android:id="@+id/note_content_box"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:hint="Note content"
+        android:gravity="top|start"
+        android:minLines="3"
+        android:maxLines="8"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"/>
+
+</LinearLayout>

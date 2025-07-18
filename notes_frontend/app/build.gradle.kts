@@ -7,12 +7,24 @@ android {
     namespace = "com.example.notesfrontend"
     compileSdk = 34
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.example.notesfrontend"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        // Example config: map local env variable 'NOTES_API_URL' to BuildConfig field if exists
+        // (for demonstration; real env passing needs CI or local gradle.properties)
+        buildConfigField(
+            "String",
+            "API_URL",
+            "\"${System.getenv("NOTES_API_URL") ?: ""}\""
+        )
     }
 
     buildTypes {
@@ -40,4 +52,5 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.cardview:cardview:1.0.0")
 }
